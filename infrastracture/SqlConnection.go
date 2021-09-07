@@ -1,5 +1,7 @@
 package infrastracture
 
+import "database/sql"
+
 type SqlConnection struct {
-	// TODO
+	Db *sql.DB
 }

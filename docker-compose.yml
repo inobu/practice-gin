@@ -1,0 +1,22 @@
+version: '3'
+
+services:
+  gin-db:
+    image: mysql:8.0
+    ports:
+      - "33006:3306"
+    restart: always
+    volumes:
+      - gin_db:/var/lib/mysql
+      - gin_log:/var/log/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: secret
+      MYSQL_USER: gin
+      MYSQL_PASSWORD: gin
+      MYSQL_DATABASE: gin
+      TZ: Asia/Tokyo
+
+volumes:
+  gin_db:
+  gin_log:
+
